@@ -7,13 +7,19 @@ jQuery(document).ready(function($) {
        a_idx = (a_idx + 1) % a.length;
        var x = e.pageX,
        y = e.pageY;
+       var color=function randomColor() {//得到随机的颜色值
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + "," + g + "," + b + ")";
+    }
        $i.css({
            "z-index": 9999,
            "top": y - 25,
            "left": x,
            "position": "absolute",
            "font-weight": "bold",
-           "color": "#ff6651"
+           "color": color,
        });
        $("body").append($i);
        $i.animate({
